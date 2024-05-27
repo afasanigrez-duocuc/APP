@@ -25,3 +25,13 @@
 #container a {
   text-decoration: none;
 }
+
+.center-text {
+  text-align: center; /* Center the text horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the content vertically */
+  align-items: center; /* Center the content horizontally */
+  height: 100%; /* Optional: Set a height to the container to enable vertical centering */
+  color:aqua;
+}

@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  nombre: string = 'Juan';
+  nombres: string[] = ['Juan', 'Pedro', 'Luis'];
+
   constructor() {}
 
 }
