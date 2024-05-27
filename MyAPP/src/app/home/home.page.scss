@@ -35,3 +35,36 @@
   height: 100%; /* Optional: Set a height to the container to enable vertical centering */
   color:aqua;
 }
+
+ion-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-button {
+  width: 100%;
+}
+
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  75% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shake {
+  animation: shake 1s ease;
+}
