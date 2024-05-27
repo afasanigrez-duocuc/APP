@@ -48,11 +48,11 @@
         <ion-card-title>Información Adicional</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <ion-item>
+        <ion-item [@shake]="shakeState">
           <ion-label position="stacked">Nombre</ion-label>
           <ion-input id="nombreInput" type="text" [(ngModel)]="nombre"></ion-input>
         </ion-item>
-        <ion-item>
+        <ion-item [@shake]="shakeState">
           <ion-label position="stacked">Apellido</ion-label>
           <ion-input id="apellidoInput" type="text" [(ngModel)]="apellido"></ion-input>
         </ion-item>
