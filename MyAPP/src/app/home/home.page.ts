@@ -58,7 +58,7 @@ export class HomePage {
       setTimeout(() => {
         nombreInput.classList.remove('shake');
         apellidoInput.classList.remove('shake');
-      }, 1000); // Duración de la animación
+      }, 1000);
     }
   }
 
