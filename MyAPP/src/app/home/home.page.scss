@@ -68,3 +68,14 @@ ion-button {
 .shake {
   animation: shake 1s ease;
 }
+
+
+.formatted-image {
+  max-width: 50%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
