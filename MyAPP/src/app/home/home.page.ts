@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PickerController, ToastController } from '@ionic/angular';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { UserService } from '../services/user.service';
 
 
 @Component({
@@ -26,19 +27,18 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 export class HomePage {
 
   username: string = '';
-  nombre: string = '';
-  apellido: string = '';
-  educacion: string = '';
-  nacimiento: string = '';
-  shakeState: string = 'start';
 
   constructor(
     private route: ActivatedRoute, 
     private pickerCtrl: PickerController,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController, 
+    private userService: UserService
   ) {
     this.route.queryParams.subscribe(params => {
       this.username = params['username'];
     });
+  }
+  ionViewWillEnter() {
+    this.username = this.userService.getUsername();
   }
 }

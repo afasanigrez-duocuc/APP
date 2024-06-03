@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-registro',
@@ -14,14 +15,19 @@ export class RegistroPage {
   password: string = '';
   confirmPassword: string = '';
 
-  constructor(private router: Router, private navCtrl: NavController) {}
+  constructor(private router: Router, private navCtrl: NavController, private userService: UserService) {}
 
   login() {
-    if (this.username && this.password && this.username.length >= 3 && this.username.length <= 8 && /^\d{4}$/.test(this.password)) {
-      this.router.navigate(['/home'], { queryParams: { username: this.username } });
-      this.navCtrl.navigateRoot(['/home']);
+    if (this.password !== this.confirmPassword) {
+      alert("Las contraseñas no coinciden");
+      return;
+    }
+
+    if (this.username && this.password.length === 4) {
+      this.userService.setUsername(this.username);
+      this.navCtrl.navigateRoot('/home');
     } else {
-      alert('Por favor, ingrese un usuario alfanumérico de 3 a 8 caracteres y una contraseña numérica de 4 dígitos.');
+      alert("Por favor, complete el formulario correctamente");
     }
   }
 }
