@@ -18,24 +18,21 @@
         <p>{{ username ? username : 'Usuario no registrado' }}</p>
       </ion-card-content>
     </ion-card>
-  
+
     <ion-card>
       <ion-card-header>
-        <ion-card-title>Bienvenidos</ion-card-title>
+        <ion-card-title>Paisajes de Chile</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        
         <div>
-          <h1></h1>
-          
-          <img class="formatted-image" src="assets/cobra.jpg" alt="Cobra">
-          <p>Para comenzar, selecciona una de las opciones del menú.</p>
-
+          <img class="formatted-image" src="assets/paisajes/chile.jpg" alt="Paisajes de Chile">
+          <p>Chile es famoso por sus impresionantes paisajes que incluyen desiertos, montañas, bosques y costas espectaculares.</p>
+          <p>Descubre más sobre estos paisajes en nuestra sección dedicada.</p>
+          <ion-button [routerLink]="['/paisajes']">Explorar Paisajes</ion-button>
         </div>
-
       </ion-card-content>
     </ion-card>
-
   </ion-content>
+
 
 
