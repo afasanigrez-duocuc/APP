@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PickerController, ToastController } from '@ionic/angular';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { RangeCustomEvent } from '@ionic/angular';
 
 
 @Component({
@@ -40,6 +41,14 @@ export class DatosPage {
     this.route.queryParams.subscribe(params => {
       this.username = params['username'];
     });
+  }
+
+  onIonChange(ev: Event) {
+    console.log('Cambios en el elemento', (ev as RangeCustomEvent).detail.value);
+  }
+
+  registroStorage() {
+    localStorage.setItem('token', this.nombre);
   }
 
   limpiarCampos() {

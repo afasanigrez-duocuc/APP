@@ -49,6 +49,13 @@
     </ion-card-content>
   </ion-card>
 
+
+  <ion-range aria-label="Range with ionChange" (ionChange)="onIonChange($event)"></ion-range>
+
+ <div class="button-container">
+  <ion-button expand="block" (click)="registroStorage()" style="width: 300px;" class="center-button">Almacenar</ion-button>
+ </div>
+
   <ion-grid>
     <ion-row class="ion-justify-content-center">
       <ion-col size="6">
@@ -59,6 +66,8 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+
+  <app-footer [valor]="nombre"> </app-footer>
 
 </ion-content>
 

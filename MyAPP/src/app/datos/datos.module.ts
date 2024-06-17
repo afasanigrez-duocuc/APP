@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { DatosPageRoutingModule } from './datos-routing.module';
 
 import { DatosPage } from './datos.page';
+import { FooterComponent } from '../components/footer/footer.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { DatosPage } from './datos.page';
     IonicModule,
     DatosPageRoutingModule
   ],
-  declarations: [DatosPage]
+  declarations: [DatosPage, FooterComponent]
 })
 export class DatosPageModule {}

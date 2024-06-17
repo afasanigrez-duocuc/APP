@@ -30,6 +30,10 @@ const routes: Routes = [
     path: 'informacion',
     loadChildren: () => import('./informacion/informacion.module').then( m => m.InformacionPageModule)
   },
+  {
+    path: 'apirest',
+    loadChildren: () => import('./pages/apirest/apirest.module').then( m => m.ApirestPageModule)
+  },
 ];
 
 @NgModule({
