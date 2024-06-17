@@ -4,9 +4,11 @@ import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { UserService } from './services/user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,7 +23,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
-    AppRoutingModule,
+    AppRoutingModule, HttpClientModule, ReactiveFormsModule,
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,

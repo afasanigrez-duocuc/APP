@@ -6,6 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+  public appPages = [
+    { title: 'Home', url: '/home', icon: 'home' },
+    { title: 'API REST', url: '/apirest', icon: 'list' },
+  ];
 
   menuType: string = 'overlay';
   constructor() {}
