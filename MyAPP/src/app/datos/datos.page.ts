@@ -32,6 +32,7 @@ export class DatosPage {
   educacion: string = '';
   nacimiento: string = '';
   shakeState: string = 'start';
+  rangeValue: number = 0;
 
   constructor(
     private route: ActivatedRoute, 
@@ -41,6 +42,15 @@ export class DatosPage {
     this.route.queryParams.subscribe(params => {
       this.username = params['username'];
     });
+  }
+
+  updateRangeValue() {
+    let progress = 0;
+    if (this.nombre) progress += 25;
+    if (this.apellido) progress += 25;
+    if (this.educacion) progress += 25;
+    if (this.nacimiento) progress += 25;
+    this.rangeValue = progress;
   }
 
   onIonChange(ev: Event) {
@@ -56,6 +66,7 @@ export class DatosPage {
     this.apellido = '';
     this.educacion = '';
     this.nacimiento = '';
+    this.rangeValue = 0;
 
     const nombreInput = document.querySelector('#nombreInput');
     const apellidoInput = document.querySelector('#apellidoInput');

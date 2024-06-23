@@ -30,19 +30,19 @@
       <ion-card-title>Actualiza tus datos:</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-item>
+      <ion-item (mouseenter)="updateRangeValue()">
         <ion-label position="stacked">Nombre</ion-label>
         <ion-input id="nombreInput" type="text" [(ngModel)]="nombre"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item (mouseenter)="updateRangeValue()">
         <ion-label position="stacked">Apellido</ion-label>
         <ion-input id="apellidoInput" type="text" [(ngModel)]="apellido"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item (mouseenter)="updateRangeValue()">
         <ion-label position="stacked">Nivel de Educación</ion-label>
         <ion-input type="text" [(ngModel)]="educacion"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item (mouseenter)="updateRangeValue()">
         <ion-label position="stacked">Fecha de Nacimiento (DD/MM/AA)</ion-label>
         <ion-input type="text" [(ngModel)]="nacimiento"></ion-input>
       </ion-item>        
@@ -50,7 +50,7 @@
   </ion-card>
 
 
-  <ion-range aria-label="Range with ionChange" (ionChange)="onIonChange($event)"></ion-range>
+  <ion-range aria-label="Range with ionChange" min="0" max="100" [(ngModel)]="rangeValue"></ion-range>
 
  <div class="button-container">
   <ion-button expand="block" (click)="registroStorage()" style="width: 300px;" class="center-button">Almacenar</ion-button>
@@ -67,38 +67,5 @@
     </ion-row>
   </ion-grid>
 
-  <app-footer [valor]="nombre"> </app-footer>
-
 </ion-content>
 
-<ion-menu contentId="main-content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content>
-    <ion-list>
-
-      <ion-menu-toggle auto-hide="false">
-        <ion-item [routerLink]="['/home']">
-          <ion-label>Home</ion-label>
-        </ion-item>
-      </ion-menu-toggle>
-
-      <ion-menu-toggle auto-hide="false">
-        <ion-item [routerLink]="['/registro']">
-          <ion-label>Registro</ion-label>
-        </ion-item>
-      </ion-menu-toggle>
-
-      <ion-menu-toggle auto-hide="false">
-        <ion-item [routerLink]="['/datos']">
-          <ion-label>Actualizar Datos</ion-label>
-        </ion-item>
-      </ion-menu-toggle>
-
-    </ion-list>
-  </ion-content>
-</ion-menu>
