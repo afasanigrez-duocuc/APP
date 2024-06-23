@@ -17,6 +17,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 
+import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,7 +35,7 @@ import { FormsModule } from '@angular/forms';
     MatNativeDateModule,
     FormsModule
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, provideAnimationsAsync(), UserService],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, SQLite, provideAnimationsAsync(), UserService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

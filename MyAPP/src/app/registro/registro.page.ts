@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { UserService } from '../services/user.service';
+import { DbService } from '../db.service';
 
 @Component({
   selector: 'app-registro',
@@ -15,7 +16,12 @@ export class RegistroPage {
   password: string = '';
   confirmPassword: string = '';
 
-  constructor(private router: Router, private navCtrl: NavController, private userService: UserService) {}
+  isDBReady: boolean = false;
+
+  constructor(private router: Router, 
+              private navCtrl: NavController, 
+              private userService: UserService, 
+              private dbService: DbService) {}
 
   login() {
     if (this.password !== this.confirmPassword) {
@@ -30,4 +36,18 @@ export class RegistroPage {
       alert("Por favor, complete el formulario correctamente");
     }
   }
+
+  ngOnInit() {
+    this.dbService.getIsDBReady().subscribe((isReady) => {
+        this.isDBReady = isReady;
+          if (isReady) {
+
+
+
+          }
+      });
+    }
+
+
+
 }
