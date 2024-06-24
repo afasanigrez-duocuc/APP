@@ -41,7 +41,7 @@
     </ion-card-header>
     <ion-card-content>
         <ul class="compact-list">
-          <li *ngFor="let time of weatherData.time | slice:0:3; let i = index">
+          <li *ngFor="let time of weatherData.time | slice:-5; let i = index">
             <span class="weather-time">{{ time }}:</span>
             <span class="weather-detail">Temp: {{ weatherData.temperature_2m[i] }}°C, Hum: {{ weatherData.relative_humidity_2m[i] }}%, Viento: {{ weatherData.wind_speed_10m[i] }} m/s</span>
           </li>

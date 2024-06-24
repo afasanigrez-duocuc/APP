@@ -12,4 +12,5 @@ export class InformacionPage implements OnInit {
   ngOnInit() {
   }
 
+
 }

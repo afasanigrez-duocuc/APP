@@ -49,10 +49,11 @@ export class HomePage implements OnInit {
   }
 
   fetchWeather() {
-    this.weatherService.getWeather(52.52, 13.41).subscribe(
+    this.weatherService.getWeather(-33.44, -70.66).subscribe(
       (data) => {
         this.weatherData = data.hourly;
         console.log(this.weatherData);
+        console.log(data)
       },
       (error) => {
         console.error('Error fetching weather data', error);

@@ -14,7 +14,7 @@ export class WeatherComponent implements OnInit {
   ngOnInit() {
     this.weatherService.getWeather(52.52, 13.41).subscribe(
       (data) => {
-        this.weatherData = data.hourly;
+        this.weatherData = data.daily;
         console.log(this.weatherData);
       },
       (error) => {
