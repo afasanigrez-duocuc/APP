@@ -14,9 +14,11 @@
       <ion-card-header>
         <ion-card-title>Usuario:</ion-card-title>
       </ion-card-header>
-      <ion-card-content>
-        <p>{{ username ? username : 'Usuario no registrado' }}</p>
-      </ion-card-content>
+      <ion-card *ngIf="userService.getUsername()">
+        <ion-card-content>
+          <p>{{ userService.getUsername() }}</p>
+        </ion-card-content>
+      </ion-card>
     </ion-card>
 
     <ion-card>

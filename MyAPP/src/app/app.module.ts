@@ -18,10 +18,12 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 
 import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx';
-
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { WeatherService } from './services/weather.service';
+import { WeatherComponent } from './components/weather/weather.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, WeatherComponent],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
@@ -33,9 +35,10 @@ import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx';
     MatDatepickerModule,
     MatInputModule,
     MatNativeDateModule,
-    FormsModule
+    FormsModule, 
+    HttpClientModule
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, SQLite, provideAnimationsAsync(), UserService],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, SQLite, provideAnimationsAsync(), UserService, Geolocation, WeatherService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

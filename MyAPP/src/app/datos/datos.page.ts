@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { PickerController, ToastController } from '@ionic/angular';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { RangeCustomEvent } from '@ionic/angular';
+import { UserService } from '../services/user.service';
 
 
 @Component({
@@ -37,7 +38,8 @@ export class DatosPage {
   constructor(
     private route: ActivatedRoute, 
     private pickerCtrl: PickerController,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    public userService: UserService,
   ) {
     this.route.queryParams.subscribe(params => {
       this.username = params['username'];

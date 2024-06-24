@@ -21,7 +21,7 @@
       <ion-card-title>Usuario:</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <p>{{ username ? username : '' }}</p>
+      <p>{{ userService.getUsername() }}</p>
     </ion-card-content>
   </ion-card>
 
@@ -49,12 +49,7 @@
     </ion-card-content>
   </ion-card>
 
-
   <ion-range aria-label="Range with ionChange" min="0" max="100" [(ngModel)]="rangeValue"></ion-range>
-
- <div class="button-container">
-  <ion-button expand="block" (click)="registroStorage()" style="width: 300px;" class="center-button">Almacenar</ion-button>
- </div>
 
   <ion-grid>
     <ion-row class="ion-justify-content-center">

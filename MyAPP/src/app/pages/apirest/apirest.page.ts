@@ -27,33 +27,8 @@ export class ApirestPage implements OnInit {
     })
   }
 
-
-  ionViewWillEnter(){
-    this.getUsuarios();
-  }
-
-
   ngOnInit() {
   }
-
-
-  getUsuarios(){
-    console.log('Obtener los datos del Usuario');
-    this.apiClient.getUsuarios().subscribe((data) => {
-      this.usuarios = data;
-    });
-  }
-
-
-  onSubmit(){
-    if(this.usuarioForm.valid){
-      const NuevoUsuario = this.usuarioForm.value;
-      this.apiClient.addUsuario(NuevoUsuario).subscribe((response) => {
-        console.log(response);
-        this.getUsuarios();
-        this.usuarioForm.reset();
-  });
-}}
 
 
 }

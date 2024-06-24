@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-import { HomePage } from './home/home.page';
-import { RegistroPage } from './registro/registro.page';
-
 const routes: Routes = [
   {
     path: 'home',
@@ -31,8 +28,8 @@ const routes: Routes = [
     loadChildren: () => import('./informacion/informacion.module').then( m => m.InformacionPageModule)
   },
   {
-    path: 'apirest',
-    loadChildren: () => import('./pages/apirest/apirest.module').then( m => m.ApirestPageModule)
+    path: 'mapa',
+    loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule)
   },
 ];
 

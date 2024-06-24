@@ -32,7 +32,7 @@ export class HomePage implements OnInit {
     private route: ActivatedRoute, 
     private pickerCtrl: PickerController,
     private toastCtrl: ToastController, 
-    private userService: UserService,
+    public userService: UserService,
     private weatherService: WeatherService
   ) {
     this.route.queryParams.subscribe(params => {
@@ -45,7 +45,7 @@ export class HomePage implements OnInit {
   }
 
   ionViewWillEnter() {
-    this.username = this.userService.getUsername();
+    this.username = this.userService.getUsername()!;
   }
 
   fetchWeather() {
