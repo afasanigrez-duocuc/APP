@@ -69,6 +69,7 @@ export class DatosPage {
     this.educacion = '';
     this.nacimiento = '';
     this.rangeValue = 0;
+    this.username = '';
 
     const nombreInput = document.querySelector('#nombreInput');
     const apellidoInput = document.querySelector('#apellidoInput');

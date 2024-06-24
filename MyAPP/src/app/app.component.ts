@@ -11,6 +11,8 @@ export class AppComponent {
     { title: 'API REST', url: '/apirest', icon: 'list' },
   ];
 
+  username: string = '';
+  
   menuType: string = 'overlay';
   constructor() {}
 }
